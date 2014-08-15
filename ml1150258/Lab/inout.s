@@ -33,10 +33,10 @@ ldr r2, =msgLen
 mov r7, $4
 svc $0
 
-mov r7, $3		    @ read syscall
-mov r0, $1		
+mov r0, $1		    @ read syscall	
 ldr r1, =buffer
 mov r2, $0x30
+mov r7, $3
 svc $0
 
 mov r0, $1		    @ print msg2
