@@ -1,4 +1,4 @@
-//http://raspberrypiassembly.wordpress.com/page/2/
+@ http://raspberrypiassembly.wordpress.com/page/2/
 @ hello.s - "Hello World ARM Assembly!" program
 
 .data                @ store string and length in 2 variables
