@@ -1,3 +1,9 @@
 Useful Links for Raspberry Pi Setup
+http://www.raspberrypi.org/help/ -> Raspberry Pi where to start
+http://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/index.html -> MIT tutorial
+http://jonas.nitro.dk/git/quick-reference.html -> git quick reference
 http://rogerdudler.github.io/git-guide/ -> Explains git commands
 http://www.techjawab.com/2013/06/setup-dynamic-dns-dyndns-for-free-on.html -> Dynamic DNS
+http://www.putty.org/ -> Putty ssh/sftp
+http://www.oreillynet.com/linux/cmd/ -> Linux command reference
+http://www.linuxdevcenter.com/excerpt/LinuxPG_quickref/linux.pdf -> Linux quick reference commands
