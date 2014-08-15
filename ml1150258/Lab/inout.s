@@ -1,16 +1,28 @@
-@ greet.s - a little asm greeter.
+@ Referenc = http://raspberrypiassembly.wordpress.com/
+@ inout.s - a little asm greeter.
+@ A program to show how to obtain input
+@ as well as output
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@              Allocate Memory
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .section	.bss
 .comm buffer, 48	     @ reserve 48 byte buffer
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@              Create some constants
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .section	.data
 msg:
 	.ascii	"** Greeter **\nPlease enter your name: "
-msgLen = . - msg
+    msgLen = . - msg
 msg2:
 	.ascii	"Hello "
-msg2Len = . - msg2
-
+    msg2Len = . - msg2
+	
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@              Program
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .section	.text
 .globl	_start
 _start:
