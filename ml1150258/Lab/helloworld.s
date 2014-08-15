@@ -3,7 +3,7 @@
 
 .data                @ store string and length in 2 variables
 msg:
-    .ascii  "Hello World ARM Assembly!"\n"
+    .ascii  "Hello World ARM Assembly!\n"
 len = . - msg
 
 .globl   _start
