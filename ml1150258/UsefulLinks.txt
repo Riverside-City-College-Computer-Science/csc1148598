@@ -1,3 +1,3 @@
-Useful Links
+Useful Links for Raspberry Pi
 http://rogerdudler.github.io/git-guide/ -> Explains git commands
 http://www.techjawab.com/2013/06/setup-dynamic-dns-dyndns-for-free-on.html -> Dynamic DNS
