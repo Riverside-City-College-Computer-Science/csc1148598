@@ -1,9 +1,9 @@
 @ http://raspberrypiassembly.wordpress.com/page/2/
-@ helloworld.s - "Hello ARM!" program
+@ helloworld.s - "Hello World in the world of ARM!" program
 
 .data                @ store string and length in 2 variables
 msg:
-    .ascii  "Hello ARM!\n"
+    .ascii  "Hello World in the world of ARM!\n"
     len = . - msg
 
 .section	.text
