@@ -11,7 +11,7 @@ _start:
     ldr r1, =msg       @ pointer string to be printed in r1
     ldr r2, =len       @ length of string in r2
     mov r7, $4         @ prepare to output to console
-    swi $0             @ wake kernel
+    svc $0             @ wake kernel
 
     mov r0, $0         @ set the return value to 0
     mov r7, $1         @ prepare to exit
