@@ -1,4 +1,4 @@
-//http://raspberrypiassembly.wordpress.com/
+@ http://raspberrypiassembly.wordpress.com/
 @ num_in.s
 @ get user input ready to do maths
 
