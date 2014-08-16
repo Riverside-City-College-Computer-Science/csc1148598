@@ -13,7 +13,6 @@ _start:
     mov r7, $4         @ prepare to output to console
     svc $0             @ wake kernel
 
-    mov r0, $0         @ set the return value to 0
     mov r7, $1         @ prepare to exit
     svc $0             @ wake kernel
 	
