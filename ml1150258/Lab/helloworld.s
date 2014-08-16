@@ -1,4 +1,4 @@
-@ hello.s - "Hello ARM!" program
+@ helloworld.s - "Hello ARM!" program
 
 .data                @ store string and length in 2 variables
 msg:
