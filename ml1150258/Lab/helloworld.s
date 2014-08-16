@@ -5,6 +5,7 @@ msg:
     .ascii  "Hello ARM!\n"
     len = . - msg
 
+.section	.text
 .globl   _start
 _start:
     mov r0, $1
