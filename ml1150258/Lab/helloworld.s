@@ -4,7 +4,7 @@
 .data                @ store string and length in 2 variables
 msg:
     .ascii  "Hello World ARM Assembly!\n"
-len = . - msg
+    len = . - msg
 
 .globl   _start
 _start:
@@ -17,4 +17,3 @@ _start:
     mov r0, $0         @ set the return value to 0
     mov r7, $1         @ prepare to exit
     svc $0             @ wake kernel
-	
