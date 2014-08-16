@@ -20,6 +20,10 @@ _start:
 	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	mov r1,#1
     lsl r1,#16
-	str r1,[r0,#40]      @ value of 40 turns off, meaning light turns on
+	str r1,[r0,#40]      @ value of 40 turns off, meaning light on
+	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	@     Might be good to put some kind of timer
+	@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 	loop$: 
 		b loop$			 @ branch till the end of time
