@@ -1,7 +1,7 @@
 # Makefile
 all: prog3a
 
-clean:
+cleanagain:
 	rm -vf *.o
  
 prog3a: prog3a.o
