@@ -2,7 +2,7 @@
 all: prog3a
  
 prog3a: prog3a.o
-	gcc -o $@ $+
+	ld -o $@ $+
  
 prog3a.o : prog3a.s
 	as -o $@ $<
