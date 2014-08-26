@@ -8,4 +8,4 @@ prog3a.o : prog3a.s
 	as -o $@ $<
  
 clean:
-	rm -vf prog3a *.o
+	rm -vf *.o
