@@ -1,5 +1,8 @@
 # Makefile
 all: prog3a
+
+clean:
+	rm -vf *.o
  
 prog3a: prog3a.o
 	ld -o $@ $+
