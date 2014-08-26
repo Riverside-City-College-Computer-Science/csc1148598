@@ -9,4 +9,3 @@ prog3a.o : prog3a.s
  
 clean:
 	rm -vf prog3a *.o
-	./prog3a ; echo $?
