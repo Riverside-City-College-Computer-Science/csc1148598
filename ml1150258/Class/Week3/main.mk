@@ -2,7 +2,7 @@
 all: main
  
 main: main.o
-	ld -o $@ $+
+	gcc -o $@ $+
  
 main.o : main.s
 	as -o $@ $<
