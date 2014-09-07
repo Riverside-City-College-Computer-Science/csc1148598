@@ -6,3 +6,4 @@
 main:          /* This is main */
     mov r0, #2 /* Put a 2 inside the register r0 */
     bx lr      /* Return from main */
+	
