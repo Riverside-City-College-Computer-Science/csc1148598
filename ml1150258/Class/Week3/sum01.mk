@@ -1,10 +1,10 @@
 # Makefile
-all: main
+all: sum01
  
-main: main.o
+sum01: sum01.o
 	gcc -o $@ $+
  
-main.o : main.s
+sum01.o : sum01.s
 	as -o $@ $<
 
 clean:
