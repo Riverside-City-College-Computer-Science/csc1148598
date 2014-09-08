@@ -9,4 +9,3 @@ main.o : main.s
 	
 clean:
     rm -vf *.o
-	
