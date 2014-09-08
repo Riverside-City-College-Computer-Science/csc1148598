@@ -1,4 +1,4 @@
-/* part1 file */
+/* part1 file   */
 	.global _start
 _start:
 	mov r0, #65
