@@ -1,10 +1,10 @@
 # Makefile
-all: load
+all: store
  
-load: load.o
+store: store.o
 	gcc -o $@ $+
  
-load.o : load.s
+store.o : store.s
 	as -o $@ $<
 
 clean:
