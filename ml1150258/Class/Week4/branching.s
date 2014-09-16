@@ -13,9 +13,9 @@ The semantics of these four condition codes in instructions updating the cpsr ar
 N will be enabled if the result of the instruction yields a negative number. Disabled otherwise.
 Z will be enabled if the result of the instruction yields a zero value. Disabled if nonzero.
 C will be enabled if the result of the instruction yields a value that requires a 33rd bit to be fully represented. 
-For instance an addition that overflows the 32 bit range of integers. There is a special case for C and substractions 
-where a non-borrowing substraction enables it, disabled otherwise: substracting a larger number to a smaller one 
-enables C, but it will be disabled if the substraction is done the other way round.
+For instance an addition that overflows the 32 bit range of integers. There is a special case for C and subtractions 
+where a non-borrowing subtraction enables it, disabled otherwise: subtracting a larger number to a smaller one 
+enables C, but it will be disabled if the subtraction is done the other way round.
 V will be enabled if the result of the instruction yields a value that cannot be represented in 32 bits two’s complement.
 
 
