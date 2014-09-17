@@ -14,9 +14,9 @@ main:
     mov r2, #111     /* a=111 */
     mov r3, #5       /* b=5 */
 	mov r0, #0       /* r0=0 -> counter */
-	ldr r1, r2       /* r1=a=111 */
+	mov r1, r2       /* r1=a=111 */
 repeat_subtraction:
-	sub r1, r1, r2   /* use cpsr */
+	sub r1, r1, r2   /* r1-r1-r2 */
 	cmp r1, r2        
     blt end          /* end the program solution reached */
 	add r0, r0, #1   /* increment r0 */
