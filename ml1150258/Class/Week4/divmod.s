@@ -25,7 +25,7 @@ repeat_subtraction:
 	sub r1, r1, r3   /* r1=r1-r3 */
 	cmp r1, r3        
     blt end          /* end the program solution reached */
-	b repeat_subtraction  /* repeat the subtraction */
+	b repeat_subtraction       /* repeat the subtraction */
 end:
     bx lr
 	
