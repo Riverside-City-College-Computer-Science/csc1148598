@@ -11,9 +11,9 @@
 .text
 .global main
 main:
-    /* Initialize */
-    mov r2, #111     /* a=111 */
-    mov r3, #5       /* b=5 */
+	/* Initialize */
+	mov r2, #111     /* a=111 */
+	mov r3, #5       /* b=5 */
 	mov r0, #0       /* r0=0 -> counter */
 	mov r1, r2       /* r1=a=111 */
 	/* Check condition where a<b then a%b=a a/b=0 */
@@ -26,5 +26,5 @@ repeat_subtraction:
 	blt end          /* end the program solution reached */
 	b repeat_subtraction       /* repeat the subtraction */
 end:
-    bx lr
+	bx lr
 	
