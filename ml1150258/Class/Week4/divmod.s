@@ -16,9 +16,10 @@ main:
     mov r3, #5       /* b=5 */
 	mov r0, #0       /* r0=0 -> counter */
 	mov r1, r2       /* r1=a=111 */
-	/* Check condition where a<b then a%b=a a/b=0
-	cmp  r1, r3      
+	/* Check condition where a<b then a%b=a a/b=0 */
+	cmp  r1, r3      /* compare and leave if less */
 	blt  end
+	/* Now just perform repeated subtractions */
 repeat_subtraction:
 	add r0, r0, #1   /* increment r0 */
 	sub r1, r1, r3   /* r1=r1-r3 */
