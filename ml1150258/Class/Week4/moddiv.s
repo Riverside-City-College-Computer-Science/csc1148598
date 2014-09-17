@@ -17,7 +17,7 @@ main:
 	mov r3, #5       /* b=5 */
 	mov r0, #0       /* r0=0 -> counter */
 	mov r1, r2       /* r1=a=111 */
-	mov r4, #1       /* if 1 swap r0 and r1 on exit */
+	mov r4, #0       /* if 1 swap r0 and r1 on exit else 0*/
 	/* Check condition where a<b then a%b=a a/b=0 */
 	cmp  r1, r3      /* compare and leave if less */
 	blt  swap
