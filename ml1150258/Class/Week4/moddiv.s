@@ -24,8 +24,7 @@ repeat_subtraction:
 	add r0, r0, #1   /* increment r0 */
 	sub r1, r1, r3   /* r1=r1-r3 */
 	cmp r1, r3       /* Note: subs won't work above need cmp!!! */
-	blt end          /* end the program solution reached */
-	b repeat_subtraction       /* repeat the subtraction */
+	bge repeat_subtraction       /* repeat the subtraction */
 end:
 	/* Exchange r0 and r1 using r4 with a swap */
 	mov r4, r0
