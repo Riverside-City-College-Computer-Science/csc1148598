@@ -23,7 +23,7 @@ main:
 repeat_subtraction:
 	add r0, r0, #1   /* increment r0 */
 	subs r1, r1, r3   /* r1=r1-r3 */
-    blt end          /* end the program solution reached */
+	blt end          /* end the program solution reached */
 	b repeat_subtraction       /* repeat the subtraction */
 end:
     bx lr
