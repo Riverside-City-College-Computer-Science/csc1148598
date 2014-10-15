@@ -1,3 +1,9 @@
+/* To Compile
+	gcc -c factorial05.s
+	gcc -c main05.s
+	gcc factorial05.o main05.o -o factorial
+	./factorial
+*/
 .data
  
 message1: .asciz "Type a number: "
