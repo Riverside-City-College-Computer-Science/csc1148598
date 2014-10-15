@@ -1,6 +1,6 @@
 
 .text
-
+.globl factorial
 factorial:
     push {r4, lr}       /* Push r4 and lr onto the stack */
     mov r4, r0         /* Keep a copy of the initial value of r0 in r4 */
