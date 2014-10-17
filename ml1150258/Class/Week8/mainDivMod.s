@@ -23,7 +23,7 @@ main:
     bl printf                    /* Call printf */
  
     ldr r0, address_of_format    /* Set &format as the first parameter of scanf */
-    mov r1, sp, #+4              /* Set variable of the stack as a */
+    mov r1, sp+#4                /* Set variable of the stack as a */
     mov r2, sp                   /* and second valud as b of scanf */
     bl scanf                     /* Call scanf */
  
