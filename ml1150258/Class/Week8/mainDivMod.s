@@ -37,7 +37,7 @@ main:
 	sub r1, r2, #4               /* and second value as a of scanf */
     ldr r1, [r1]                 /* Load the integer a read by scanf into r1 */
     ldr r2, [sp]		         /* Load the integer b read by scanf into r2 */
-    ldr r0, address_of_message2  /* Set &message2 as the first parameter of printf */
+    ldr r0, address_of_message3  /* Set &message2 as the first parameter of printf */
     bl printf                    /* Call printf */
  
     add sp, sp, #+8              /* Discard the integer read by scanf */
