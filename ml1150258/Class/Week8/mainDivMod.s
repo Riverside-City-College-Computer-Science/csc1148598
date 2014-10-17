@@ -23,12 +23,13 @@ main:
     bl printf                    /* Call printf */
  
     ldr r0, address_of_format    /* Set &format as the first parameter of scanf */
-    mov r1, sp+#4                /* Set variable of the stack as a */
+    mov r1, sp                   /* Set variable of the stack as a */
+	sub r1,r1,#4
     mov r2, sp                   /* and second valud as b of scanf */
     bl scanf                     /* Call scanf */
  
     ldr r1, [sp,#+4]             /* Load the integer read by scanf into r1 */
-    ldr r2, [sp]		 /* Load the integer read by scanf into r2 */
+    ldr r2, [sp]		         /* Load the integer read by scanf into r2 */
     ldr r0, address_of_message2  /* Set &message2 as the first parameter of printf */
     bl printf                    /* Call printf */
  
