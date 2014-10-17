@@ -35,6 +35,21 @@ addSub:
     pop {lr}       /* Pop lr from the stack */
     bx lr          /* Leave addSub */
 /* end addSub */
+
+/* void divMod(int &r2,int &r0,int &r1) */
+divMod:
+	push {lr}       /* Push lr onto the stack */
+	/* Determine the quotient and remainder */
+	mov r0,#0
+	mov r3,#1
+	cmp r1,r2
+	bge end
+		bl scaleLeft
+		bl addSub
+	end:
+	pop {lr}       /* Pop lr from the stack */
+    bx lr          /* Leave addSub */
+/* end divMod */
 	
 .globl main
 main:
@@ -58,7 +73,7 @@ main:
 	add r1, sp, #4               /* and second value as a of scanf */
     ldr r1, [r1]                 /* Load the integer a read by scanf into r1 */
     ldr r2, [sp]		         /* Load the integer b read by scanf into r2 */
-	bl scaleRight
+	bl divMod
     ldr r0, address_of_message3  /* Set &message2 as the first parameter of printf */
     bl printf                    /* Call printf */
  
