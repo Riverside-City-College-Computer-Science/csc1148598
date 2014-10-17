@@ -87,7 +87,9 @@ main:
 	add r1, sp, #4               /* and second value as a of scanf */
     ldr r1, [r1]                 /* Load the integer a read by scanf into r1 */
     ldr r2, [sp]		         /* Load the integer b read by scanf into r2 */
-	bl addSub
+	mov r0,#0
+	mov r3,#1
+	bl scaleLeft
     ldr r0, address_of_message3  /* Set &message3 as the first parameter of printf */
     bl printf                    /* Call printf */
  
