@@ -31,6 +31,8 @@ main:
     ldr r0, address_of_message2  /* Set &message2 as the first parameter of printf */
     bl printf                    /* Call printf */
 	
+	ldr r1, [sp,#-4]             /* Move r1 to r2 */
+    ldr r2, [sp]		         /* Move r2 to r1 */
     ldr r0, address_of_message3  /* Output the results with &message3 */
     bl printf                    /* Call printf */
  
