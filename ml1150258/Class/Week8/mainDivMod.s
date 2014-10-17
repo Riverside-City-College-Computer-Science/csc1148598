@@ -37,6 +37,7 @@ addSub:
 /* end addSub */
 
 /* void scaleLeft(int &r1,int &r3,int &r2) */
+scaleLeft:
 	push {lr}             /* Push lr onto the stack */
 	doWhile_r1_ge_r2:     /* Scale left till overshoot with remainder */
 		mov r3,r3,LSL #1  /* scale factor */
