@@ -1,22 +1,45 @@
 /* To Compile
-	gcc -c divmod.s
-	gcc -c mainDivMod.s
-	gcc divmod.o mainDivMod.o -o DivMod
-	./DivMod
+	gcc mainDivMod.s -o div
+	./div
 */
 .data
  
 message1: .asciz "Type 2 numbers a and b for a/b and a%b: "
 format:   .asciz "%d %d"
-message2: .asciz "The inputs are a=%d is b=%d\n"
-message3: .asciz "The outputs are a div b=%d is a mod b=%d\n"
+message2: .asciz "The inputs are a = %d is b = %d\n"
+message3: .asciz "The outputs are a div b = %d is a mod b = %d\n"
  
 .text
- 
+
+/*void scaleRight(int &r1,int &r3,int &r2) */
+scaleRight:
+	push {lr}             /* Push lr onto the stack */
+	doWhile_r1_lt_r2      /* Shift right until just under the remainder */
+		mov r3,r3,ASR #1; /* Division counter */
+		mov r2,r2,ASR #1  /* Mod/Remainder subtraction */
+	cmp r1,r2
+	blt doWhile_r1_lt_r2
+	pop {lr}              /* Pop lr from the stack */
+    bx lr                 /* Leave scaleRight */
+/* end scaleRight */
+
+/* void addSub(int &r3,int &r2,int &r0,int &r1) */
+addSub:
+	push {lr}       /* Push lr onto the stack */
+	doWhile_r3_ge_1:
+		add r0,r0,r3
+		sub r1,r1,r2
+		bl scaleRight
+	cmp r3,#1
+	bge doWhile_r3_ge_1
+    pop {lr}       /* Pop lr from the stack */
+    bx lr          /* Leave addSub */
+/* end addSub */
+	
 .globl main
 main:
     str lr, [sp,#-4]!            /* Push lr onto the top of the stack */
-    sub sp, sp, #8               /* Make room for three 4 byte integers in the stack */
+    sub sp, sp, #8               /* Make room for two 4 byte integers in the stack */
 	
     ldr r0, address_of_message1  /* Set &message1 as the first parameter of printf */
     bl printf                    /* Call printf */
