@@ -9,27 +9,29 @@
 message1: .asciz "Type 2 numbers a and b for a/b and a%b: "
 format:   .asciz "%d %d"
 message2: .asciz "The inputs are a=%d is b=%d\n"
+message3: .asciz "The outputs are a div b=%d is a mod b=%d\n"
  
 .text
  
 .globl main
 main:
     str lr, [sp,#-4]!            /* Push lr onto the top of the stack */
-    sub sp, sp, #8               /* Make room for two 4 byte integer in the stack */
-                                 /* In these 4 bytes we will keep the a and b for a/b and a%b */
-                                 /* entered by the user */
-                                 /* Note that after that the stack is 12-byte aligned */
+    sub sp, sp, #8               /* Make room for two 4 byte integers in the stack */
+	
     ldr r0, address_of_message1  /* Set &message1 as the first parameter of printf */
     bl printf                    /* Call printf */
  
-    ldr r0, address_of_format    /* Set &format as the first parameter of scanf */
+    ldr r0, address_of_format    /* Set format as the first parameter of scanf */
     mov r2, sp                   /* Set variable of the stack as b */
 	sub r1, r2, #4               /* and second value as a of scanf */
     bl scanf                     /* Call scanf */
  
-    ldr r1, [sp,#-4]             /* Load the integer read by scanf into r1 */
-    ldr r2, [sp]		         /* Load the integer read by scanf into r2 */
+    ldr r1, [sp,#-4]             /* Load the integer a read by scanf into r1 */
+    ldr r2, [sp]		         /* Load the integer b read by scanf into r2 */
     ldr r0, address_of_message2  /* Set &message2 as the first parameter of printf */
+    bl printf                    /* Call printf */
+	
+    ldr r0, address_of_message3  /* Output the results with &message3 */
     bl printf                    /* Call printf */
  
  
@@ -39,4 +41,5 @@ main:
  
 address_of_message1: .word message1
 address_of_message2: .word message2
+address_of_message3: .word message3
 address_of_format: .word format
