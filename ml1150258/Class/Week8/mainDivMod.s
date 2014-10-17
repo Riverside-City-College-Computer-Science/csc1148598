@@ -89,7 +89,7 @@ main:
     ldr r2, [sp]		         /* Load the integer b read by scanf into r2 */
 	mov r0,#0
 	mov r3,#1
-	bl scaleLeft
+	bl scaleRight
     ldr r0, address_of_message3  /* Set &message3 as the first parameter of printf */
     bl printf                    /* Call printf */
  
