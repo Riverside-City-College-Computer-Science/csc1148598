@@ -14,7 +14,7 @@ message3: .asciz "The outputs are a div b = %d is a mod b = %d\n"
 /*void scaleRight(int &r1,int &r3,int &r2) */
 scaleRight:
 	push {lr}             /* Push lr onto the stack */
-	doWhile_r1_lt_r2      /* Shift right until just under the remainder */
+	doWhile_r1_lt_r2:     /* Shift right until just under the remainder */
 		mov r3,r3,ASR #1; /* Division counter */
 		mov r2,r2,ASR #1  /* Mod/Remainder subtraction */
 	cmp r1,r2
