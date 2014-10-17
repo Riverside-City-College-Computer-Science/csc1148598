@@ -26,16 +26,19 @@ main:
 	sub r1, r2, #4               /* and second value as a of scanf */
     bl scanf                     /* Call scanf */
  
-    ldr r1, [sp,#-4]             /* Load the integer a read by scanf into r1 */
+    mov r2, sp
+	sub r1, r2, #4               /* and second value as a of scanf */
+    ldr r1, [r1]                 /* Load the integer a read by scanf into r1 */
     ldr r2, [sp]		         /* Load the integer b read by scanf into r2 */
     ldr r0, address_of_message2  /* Set &message2 as the first parameter of printf */
     bl printf                    /* Call printf */
 	
-	ldr r1, [sp,#-4]             /* Move r1 to r2 */
-    ldr r2, [sp]		         /* Move r2 to r1 */
-    ldr r0, address_of_message3  /* Output the results with &message3 */
+    mov r2, sp
+	sub r1, r2, #4               /* and second value as a of scanf */
+    ldr r1, [r1]                 /* Load the integer a read by scanf into r1 */
+    ldr r2, [sp]		         /* Load the integer b read by scanf into r2 */
+    ldr r0, address_of_message2  /* Set &message2 as the first parameter of printf */
     bl printf                    /* Call printf */
- 
  
     add sp, sp, #+8              /* Discard the integer read by scanf */
     ldr lr, [sp], #+4            /* Pop the top of the stack and put it in lr */
