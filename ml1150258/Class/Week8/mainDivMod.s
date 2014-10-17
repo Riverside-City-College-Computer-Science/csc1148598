@@ -57,7 +57,7 @@ divMod:
 	mov r0,#0
 	mov r3,#1
 	cmp r1,r2
-	bge end
+	blt end
 		bl scaleLeft
 		bl addSub
 	end:
@@ -88,7 +88,7 @@ main:
     ldr r1, [r1]                 /* Load the integer a read by scanf into r1 */
     ldr r2, [sp]		         /* Load the integer b read by scanf into r2 */
 	bl divMod
-    ldr r0, address_of_message3  /* Set &message2 as the first parameter of printf */
+    ldr r0, address_of_message3  /* Set &message3 as the first parameter of printf */
     bl printf                    /* Call printf */
  
     add sp, sp, #8               /* Discard the integer read by scanf */
