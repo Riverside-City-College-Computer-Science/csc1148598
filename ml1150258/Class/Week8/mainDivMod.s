@@ -16,7 +16,7 @@ message3: .asciz "The outputs are a div b=%d is a mod b=%d\n"
 .globl main
 main:
     str lr, [sp,#-4]!            /* Push lr onto the top of the stack */
-    sub sp, sp, #8               /* Make room for two 4 byte integers in the stack */
+    sub sp, sp, #12               /* Make room for three 4 byte integers in the stack */
 	
     ldr r0, address_of_message1  /* Set &message1 as the first parameter of printf */
     bl printf                    /* Call printf */
@@ -40,7 +40,7 @@ main:
     ldr r0, address_of_message3  /* Set &message2 as the first parameter of printf */
     bl printf                    /* Call printf */
  
-    add sp, sp, #+8              /* Discard the integer read by scanf */
+    add sp, sp, #+12              /* Discard the integer read by scanf */
     ldr lr, [sp], #+4            /* Pop the top of the stack and put it in lr */
     bx lr                        /* Leave main */
  
