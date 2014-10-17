@@ -42,10 +42,10 @@ scaleLeft:
 	doWhile_r1_ge_r2:     /* Scale left till overshoot with remainder */
 		mov r3,r3,LSL #1  /* scale factor */
 		mov r2,r2,LSL #1  /* subtraction factor */
-		cmp r2,r2
+		cmp r1,r2
 	bge doWhile_r1_ge_r2  /* End loop at overshoot */
-	mov r3,r3,ASL #1      /* Scale factor back */
-	mov r2,r2,ASL #1      /* Scale subtraction factor back */
+	mov r3,r3,ASR #1      /* Scale factor back */
+	mov r2,r2,ASR #1      /* Scale subtraction factor back */
 	pop {lr}              /* Pop lr from the stack */
     bx lr                 /* Leave addSub */
 /* end scaleLeft */
