@@ -36,6 +36,19 @@ addSub:
     bx lr          /* Leave addSub */
 /* end addSub */
 
+/* void scaleLeft(int &r1,int &r3,int &r2) */
+	push {lr}             /* Push lr onto the stack */
+	doWhile_r1_ge_r2:     /* Scale left till overshoot with remainder */
+		mov r3,r3,LSL #1  /* scale factor */
+		mov r2,r2,LSL #1  /* subtraction factor */
+		cmp r2,r2
+	bge doWhile_r1_ge_r2  /* End loop at overshoot */
+	mov r3,r3,ASL #1      /* Scale factor back */
+	mov r2,r2,ASL #1      /* Scale subtraction factor back */
+	pop {lr}              /* Pop lr from the stack */
+    bx lr                 /* Leave addSub */
+/* end scaleLeft */
+
 /* void divMod(int &r2,int &r0,int &r1) */
 divMod:
 	push {lr}       /* Push lr onto the stack */
